@@ -15,7 +15,7 @@ const userService = userServices.default
 const FAV = () => {
 
   const [data,setData] = useState([])
-  const [total,setTotal] = useState("")
+  const [,setTotal] = useState("")
   useEffect(()=>{
     getData();
   },[])
@@ -41,6 +41,7 @@ const FAV = () => {
             draggable: true,
             progress: undefined,
           });
+          getData();
     })
 }
 
@@ -93,7 +94,7 @@ const FAV = () => {
        return (
         <div className='items-te'>
         <div className='items-cart'>
-        <img src={item.dish_image} width="200" height="150"/>
+        <img src={item.dish_image} alt="items-fav" width="200" height="150"/>
         </div>
         <div className='items-bt'>
         

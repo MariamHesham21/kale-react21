@@ -27,15 +27,12 @@ const Setting = () => {
                     <p><a href="/AccountInfo">Accout Info<span>></span> </a></p>
                     <p><a href="/MyOrders">My Orders <span>></span> </a></p>
                     <p><a href="/ChangePass">Change Password <span>></span></a></p>
-
                     <p><button className="btn" onClick={()=>handleLogout()}>logOut</button><span></span></p>
                 </ul>
             </div>
             <Footer/>
-
         </div>
         </Fragment>
     )
 }
-
 export default Setting;

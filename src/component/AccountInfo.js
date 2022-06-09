@@ -2,7 +2,7 @@ import React,{Fragment,useState,useEffect} from "react"
 import * as userServices from '../services/userServices';
 import Nav from "./Navbar"
 import Footer from "./Footer";
-
+import { Link } from "react-router-dom";
 const userService = userServices.default
 
 const AccountInfo = () => {
@@ -12,14 +12,14 @@ const [userFirstName,setUserFirstName]=useState("")
 const [userLastName,setUserLastName]=useState("")
 const [userUsername,setUserUsername]=useState("")
 const [userDateOfBirth,setuserDateOfBirth]=useState("")
-const [userIsMale,setuserIsMale]=useState("")
+const [,setuserIsMale]=useState("")
 const [userPhone,setUserName]=useState("")
 const [userAddress,setuserAddress]=useState("")
 
 
 useEffect(()=>{
     profile();
-})
+},[])
 
 function profile(){
     userService.userProfile().then((res)=>{
@@ -53,7 +53,16 @@ function profile(){
                     <p>Phon Number:&nbsp; &nbsp; {userPhone} </p>
                     <p>Address:&nbsp; &nbsp; {userAddress} </p>
                 </ul>
-                <a href="/updateprofile" className="btn">updateProfile</a>
+                <Link  className="btn"
+                 to={'/updateprofile'}
+                 state={{ 
+                     userEmail: userEmail,
+                     userFirstName:userFirstName,
+                     userLastName:userLastName,
+                     userUsername:userUsername,
+                     userDateOfBirth:userDateOfBirth,
+                     
+                 }} >updateProfile</Link>
             </div>
         </div>
         <Footer/>

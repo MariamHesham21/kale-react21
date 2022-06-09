@@ -84,8 +84,6 @@ const ChangePass = () => {
       })
     }
   }
-
-
     return(
       <Fragment>
       <Nav/>

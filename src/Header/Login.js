@@ -3,7 +3,8 @@ import * as userServices from '../services/userServices';
 import { useNavigate  } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Nav from "../component/Navbar"
+import Nav from "../component/Navbar";
+import back from "../photo-react/Background-For-Login.png"
 
 
 const userService = userServices.default
@@ -61,17 +62,16 @@ else{
     });  
   })
 }
-
- 
 }
-
   return (
     <Fragment>
     <Nav/>
-    <div className='login-form'>
-    <div className='log-ALL'>
+    <div className='login-form' >
+      <div className='login-img'>
+      <img src={back} alt="background" width="1473"/>
+      </div>
 
-      
+    <div className='log-ALL'>
         <h2><span>LOG</span>IN</h2>
         <input 
         type="email"

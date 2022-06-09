@@ -9,7 +9,7 @@ const Reviews =() => {
     const [dataReview,setDataReview]=useState([])
     useEffect(()=>{
         review();
-    })
+    },[])
     function review(){
         userService.get_review().then((res)=>{
             setDataReview(res.data.data.info)
@@ -25,9 +25,9 @@ const Reviews =() => {
                 return(
                     <div className='box-container1'>
                         <div className="box">
-                            <img src={qout} /> 
+                            <img src={qout} alt="review"/> 
                             <p>"{info.comment}"</p>
-                            <img src={rev1} className="under"/> 
+                            <img src={rev1} className="under" alt="review"/> 
                             <h3 className="under">
                             {info.user}
                             </h3>

@@ -1,39 +1,71 @@
 import React,{Fragment ,useEffect, useState} from 'react'
- 
+import { useLocation } from "react-router-dom";
 import Nav from "./Navbar"
 import Footer from "./Footer";
+import { toast } from "react-toastify";
+import { useNavigate  } from "react-router-dom";
+
+
 
 import * as userServices from '../services/userServices';
 const userService = userServices.default
 
     const UpdateProfile =()=>{
-        const [data,setData] = useState([])
-        
-        // const[email,setEmail] = useState("")
-        // const [first_name,setfirst_name] = useState("")
-        // const [last_name,setlast_name] = useState("")
-        // const [username,setusername] = useState("")
-        // const [birthdata,setbirthdata] = useState("")
+      
+        const location = useLocation();
+         const[email,setEmail] = useState("")
+         const [first_name,setfirst_name] = useState("")
+         const [last_name,setlast_name] = useState("")
+         const [username,setusername] = useState("")
+         const [birthdate,setbirthdate] = useState("")
 
 
+         const history = useNavigate ();
+  toast.configure();
 
         useEffect(()=>{
-            getData();
+            console.log("data", location.state);
+            setEmail(location.state.userEmail)
+            setfirst_name(location.state.userFirstName)
+            setlast_name(location.state.userLastName)
+            setusername(location.state.userUsername)
+            setbirthdate(location.state.userDateOfBirth)
+
           },[])
     
 
-        function getData(){
-            userService.userProfile().then((res)=>{
-              setData(res.data.data);
-              console.log("res",res.data.data)
-            })
-          }
+    
 
-        // function change_profile(email,first_name,last_name,username,birthdata){
-        //     userService.userProfileUpdate(email,first_name,last_name,username,birthdata).then((res)=>{
-        //         console.log(res.data)
-        //     })
-        // }
+         function change_profile(){
+             userService.userProfileUpdate(email,first_name,last_name,username,birthdate).then((res)=>{
+                if(res.data.status === true){
+                    history("/AccountInfo");
+                    toast.success("update success", {
+                      position: toast.POSITION.TOP_LEFT,
+                      autoClose: 4000,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                    });
+                    
+            }
+            
+                  
+            }).catch((err)=>{
+                toast.error("something is wrong  try agian later", {
+                    position: toast.POSITION.TOP_LEFT,
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                  });
+            })
+            
+         }
 
     return (
         <Fragment>
@@ -47,43 +79,43 @@ const userService = userServices.default
                 <label>Email: </label>
                     <input 
                     type="email" 
-                    value={data.email}
-                    // onChange={(e)=>setEmail(e.target.value)}
+                    value={email}
+                    /*  onChange={(e)=>setEmail(e.target.value)} */
+                    disable
                     /><br/>
 
                     <label>First Name: </label>
                     <input 
                     type="text" 
-                    value={data.first_name}
-                    // onChange={(e)=>setfirst_name(e.target.value)}
-                    placeholder="new first name"
+                    value={first_name}
+                    onChange={(e)=>setfirst_name(e.target.value)}
                     /><br/>
 
                     <label>last Name: </label>
                     <input 
                     type="text" 
-                    value={data.last_name}
-                    // onChange={(e)=>setlast_name(e.target.value)}
+                    value={last_name}
+                     onChange={(e)=>setlast_name(e.target.value)}
                     /><br/>
 
                     <label>User Name: </label>
                     <input 
                     type="text" 
-                    value={data.username}
-                    // onChange={(e)=>setusername(e.target.value)}
+                    value={username}
+                     onChange={(e)=>setusername(e.target.value)}
 
                     /> <br/>
 
                     <label> Date Of Birth:  </label>
                     <input type="date" 
-                    value={data.birthdate}
-                    // onChange={(e)=>setbirthdata(e.target.value)}
+                    value={birthdate}
+                     onChange={(e)=>setbirthdate(e.target.value)}
 
                     />
                 </ul>
                 <button className="btn"
                  type="submit" 
-                // onClick={()=>change_profile()}
+                 onClick={()=>change_profile()}
                 >Update</button>
 
             </div>
@@ -93,9 +125,4 @@ const userService = userServices.default
     )
 
 }
-
-
-
-
-
 export default UpdateProfile;

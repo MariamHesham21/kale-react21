@@ -32,18 +32,16 @@ const Footer = () => {
                         <h3 className="title">follow-us</h3>
                         <p>
                         <div className='icon-footer'>
-                            <img src={fac} /> 
-                            <img src={go} /> 
-                            <img src={inst} /> 
-                            <img src={tw} /> 
+                            <img src={fac} alt="fac-icon"/> 
+                            <img src={go} alt="gog-icon"/> 
+                            <img src={inst} alt="inst-icon"/> 
+                            <img src={tw} alt="twe-icon"/> 
                         </div>
                         </p>
                     </div>
-                    
                 </div>
             </footer>
         </div>
     )
 }
-
 export default Footer;

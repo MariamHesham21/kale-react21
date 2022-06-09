@@ -1,10 +1,12 @@
 import React from 'react';
 import { BsChevronLeft } from "react-icons/bs";
 import * as userServices from '../services/userServices';
-import {useEffect, useState} from 'react';
+import { useState} from 'react';
 import { useNavigate  } from "react-router-dom";
 import Nav from "../component/Navbar"
 import { toast } from "react-toastify";
+import back from "../photo-react/Background-For-Login.png"
+
 
 const userService = userServices.default
 const ForgetPassword = () => {
@@ -58,6 +60,10 @@ const ForgetPassword = () => {
   return (
     <fragment>
     <Nav/>
+    <div className='forg-page'>
+    <div className='login-img'>
+      <img src={back} alt="background" width="1470"/>
+    </div>
     <div className='Forget-pass'>
         <div className='reset'>
             <a className="fas-left" href="/LoginF">< BsChevronLeft/></a>
@@ -81,7 +87,7 @@ const ForgetPassword = () => {
       </div>
       </div>
 
-    </div>
+    </div></div>
     </fragment>
   )
 }

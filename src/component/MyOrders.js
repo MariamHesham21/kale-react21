@@ -1,7 +1,6 @@
 import React,{Fragment,useState,useEffect} from "react"
 import Nav from "./Navbar"
 import * as userServices from '../services/userServices';
-import Footer from "./Footer";
 
 const userService = userServices.default
 const MyOrders = () => {
@@ -10,7 +9,7 @@ const MyOrders = () => {
 
     useEffect(()=>{
         order();
-    })
+    },[])
 
     function order(){
         userService.myOrder().then((res)=>{
@@ -26,9 +25,7 @@ const MyOrders = () => {
             <div className="titel">
                 <h1> MY <span>ORDERS </span></h1>
             </div>
-
         {dateOrder.map((My_order)=>{
-
                 return(
                     <div className="my-orders-contain">
                     <ul>
@@ -45,5 +42,4 @@ const MyOrders = () => {
         </Fragment>
     )
 }
-
 export default MyOrders;

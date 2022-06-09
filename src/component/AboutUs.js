@@ -10,7 +10,7 @@ const About = () => {
         <div className='about'>
         <div className='about-contian'>
             <div className='about-img'>
-                <img src={aboutphoto} /> 
+                <img src={aboutphoto} alt="aboutUs-img"/> 
             </div> 
             <div className='about-text'>
                 <h3> What make our <span>special</span>?</h3>

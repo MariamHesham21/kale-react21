@@ -1,9 +1,11 @@
-import React,{fragment, useState} from 'react'
+import React,{Fragment, useState} from 'react'
 import * as userServices from '../services/userServices';
 import { useNavigate  } from "react-router-dom";
 import {FaTimes } from "react-icons/fa";
 import Nav from "../component/Navbar"
 import { toast } from "react-toastify";
+import back from "../photo-react/Background-For-Login.png"
+
 
 
 const userService = userServices.default
@@ -18,7 +20,7 @@ const Sign = () => {
     const [isMale,setisMale] = useState(false);
     const [address,setaddress] = useState("");
     const [phone,setphone] = useState("");
-    const[confirmPass,setConfirmPassword]=useState("");
+    const[,setConfirmPassword]=useState("");
 
     const history = useNavigate ();
     toast.configure();
@@ -74,8 +76,12 @@ const Sign = () => {
 
 
   return (
-    <fragment>
+    <Fragment>
     <Nav/>
+    <div className='si-form'>
+    <div className='login-img'>
+      <img src={back} alt="background" width="1489"/>
+    </div>
      <div className="signup-form">
          <a className="fas fa-times" id="close-S" href="/LoginF"><FaTimes/></a> 
          <form >
@@ -157,8 +163,8 @@ const Sign = () => {
             <button type="submit" className="btn" onClick={(e)=>userSignup(e)}>Sign Up </button>
         </div>
     </form>
-</div>
-</fragment>
+</div></div>
+</Fragment>
   )
 }
 

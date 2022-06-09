@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import Nav from "./Navbar"
 
 import Footer from "./Footer"
+import resimg from"../photo-react/back.png"
 
 
 
@@ -80,46 +81,38 @@ const Reservation =() => {
                     progress: undefined,
                   });
             })
-        
-        }
-        
+        }  
     }
-       
-    
+
     return(
         <Fragment>
         <Nav/>
             <div className="reserv-container" >
+            <div class="image">
+            <img src={resimg} alt="resimg"/>
+            </div>
                 <div className="reservation" >
-                    
                     <input className="people" 
                     type="number" name="quantity" 
                     min="1" max="150" 
                     placeholder="Number of people (1-150)" 
                     onChange={(e)=>setreservguestcount(e.target.value)}/>
                     <br />
-                    
                     <input className="clender" 
                     type="date" 
                     name="birthdaytime" 
                     onChange={(e)=>setreservDate(e.target.value)}/>
-
                     <br/>
-
                     <input className="time" 
                     type="time" 
                     name="birthdaytime" 
                     onChange={(e)=>setreservtime(e.target.value)}/>
                     <br/>
-
                     <button className="btn" type="submit"  onClick={()=>userReservation()}>confirm</button><button/>
-
                 </div>
-
             </div>
             <Footer/>
         </Fragment>
     )
 }
-
 export default Reservation

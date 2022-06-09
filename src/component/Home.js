@@ -1,5 +1,5 @@
 import React from "react"
-import App from "../App.css"
+import "../App.css"
 import Nav from "./Navbar"
 
 import homephoto from '../photo-react/Home.jpg';
@@ -25,7 +25,6 @@ const Home =() => {
         <fragment>
         <Nav/>
         <div className='banner'>
-
             <div className='banner-contain'>
                 <div className='container'>
                     <div className='text'>
@@ -33,23 +32,20 @@ const Home =() => {
                         <p>We cook our dishes with love for you, and We use the finest ingredients in our food.</p>
                         <div className="about-btn">
                         <a href="/About" className="btn" id="ab">Learn More</a>
-                        </div>
-                                            
+                        </div>                                       
                     </div>     
                 </div>
                 <div className='banner-img'>
-                    <img src={homephoto} /> 
+                    <img src={homephoto} alt="HOME-IMG"/> 
                 </div>
-            </div>
-            
+            </div>    
         </div>
-
          {/* home Menu */}
         <div className='/menuhome'>
             <h1 className="heading"><span>Our</span> Menu </h1>
             <div className='menu-contian'>
                 <div className='menuh-img'>
-                    <img src={menuHomeph} /> 
+                    <img src={menuHomeph} alt="menu-img"/> 
                 </div> 
                 <div className='menu-text'>
                     <h3> What do we <span>offer</span>?</h3>
@@ -63,57 +59,48 @@ const Home =() => {
                 </div>
             </div>
         </div>
-        
-
          {/* home Gallry*/}
          <div className='gallry-contain'>
          <h1 className="heading">our <span>Gallery</span></h1>
          <div className="gal-con">
-            <img src={img8} alt="" width="300" height="200" />
-            <img src={img3} alt="" width="300" height="200"/>
-            <img src={img2} alt="" width="300" height="200"/>
-            <img src={img5} alt="" width="300" height="200"/>
+            <img src={img8} alt="image" width="300" height="200" />
+            <img src={img3} alt="image" width="300" height="200"/>
+            <img src={img2} alt="image" width="300" height="200"/>
+            <img src={img5} alt="image" width="300" height="200"/>
         </div>
         <div className="gal-con">
-            <img src={img7} alt="" width="300" height="200" />
-            <img src={img6} alt="" width="300" height="200"/>
-            <img src={img4} alt="" width="300" height="200"/>
-            <img src={img1} alt="" width="300" height="200"/>
+            <img src={img7} alt="image" width="300" height="200" />
+            <img src={img6} alt="image" width="300" height="200"/>
+            <img src={img4} alt="image" width="300" height="200"/>
+            <img src={img1} alt="image" width="300" height="200"/>
         </div>
-
-
         </div>
-
-
         {/* home review */}
         <div className="review1">
             <h1 className="heading">Customer's <span>REVIEW</span></h1>
             <div className='box-container2'>
                 <div className="box">
-                    <img src={qout} /> 
+                    <img src={qout} alt="review-img"/> 
                     <p><span>"</span>Good service and fresh food , it was delicious food.<span>"</span></p>
-                    <img src={rev1} /> 
+                    <img src={rev1} alt="review-img"/> 
                     <h3>Ben Jon</h3>
                 </div>
                 <div className="box">
-                    <img src={qout} /> 
+                    <img src={qout} alt="review-img"/> 
                     <p><span>"</span>the chicken was perfectly cooked, I will definitely come again.<span>"</span></p>
-                    <img src={rev2} /> 
+                    <img src={rev2} alt="review-img"/> 
                     <h3>Julia Moore</h3>
                 </div>
                     <div className="box">
-                    <img src={qout} /> 
+                    <img src={qout} alt="review-img"/> 
                     <p><span>"</span>I had a great time having my meal in this restaurant, the waiters were friendly.<span>"</span></p>
-                    <img src={rev3} /> 
+                    <img src={rev3} alt="review-img"/> 
                     <h3>Tom Reeves</h3>
                 </div>
-                
             </div>
         </div>
         <Footer/>
         </fragment>
-    
     )
 }
-
 export default Home

@@ -95,7 +95,7 @@ export default{
     },
 
 //update profile
-    userProfileUpdate: async function(email,first_name,last_name,username,birthdata){
+    userProfileUpdate: async function(email,first_name,last_name,username,birthdate){
         var myToken = await localStorage.getItem('token')
         return axios({
             method: 'PUT',
@@ -108,7 +108,7 @@ export default{
                 last_name:last_name,
                 username:username,
                 email:email,
-                birthdata:birthdata,
+                birthdate:birthdate,
             }
         })
     },
@@ -152,18 +152,10 @@ var myToken = await localStorage.getItem('token')
 },
 
 //get review
-    get_review: async function(comment){
-        var myToken = await localStorage.getItem('token')
+    get_review: async function(){
             return axios({
                 method: 'GET',
-            
-                url: endPoint +'staff/comment/',
-                headers: {
-                    "Authorization":myToken
-                },
-                data:{
-                    comment:comment,
-                }
+                url: endPoint +'staff/Reviews/',
             })
         },
 

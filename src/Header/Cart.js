@@ -89,7 +89,7 @@ function delete_item(id){
         <Fragment>
         <div className='items-te'>
         <div className='items-cart'>
-        <img src={item.dish.dish_image} width="170" height="150" style={{'borderRadius':'8px'}}/>
+        <img src={item.dish.dish_image} alt="items-cart" width="170" height="150" style={{'borderRadius':'8px'}}/>
         </div>        
         <p className='items-bt'>{item.dish.dish_name}</p>
         <div className='items-btss'>
@@ -109,8 +109,6 @@ function delete_item(id){
           <h4>{item.price}</h4>
         </div>
         </div>
-      
-
         </Fragment>
       )
           
@@ -129,7 +127,7 @@ function delete_item(id){
      <div className='Ite'>
        <div className='Ite-btn'>
          <div className='sub'>
-         <a href="/Menu" className="nav-bt" id="nav-btn">Continue Order</a>
+         <a href="/Menu" className="nav-bt" id="nav-btn">Add Product</a>
          </div>
          <div className='sub'>
          <a href="/CheakOut" className="nav-bt" id="nav-btn">Check Out</a>

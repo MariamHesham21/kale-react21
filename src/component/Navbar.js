@@ -15,7 +15,7 @@ const Navbar = ({dishName,search,setDishName}) => {
         <div className='nav'>
         <nav>
             <div className='logo'> 
-                <img src={Logo} width="42"/><div className="lo"><span>K</span>ali <span>M</span>e <span>C</span>razy </div>
+                <img src={Logo} width="42" alt="logo"/><div className="lo"><span>K</span>ale <span>M</span>e <span>C</span>razy </div>
             </div>
             <div className='navbar-contain'>
                 <ul>
@@ -65,16 +65,10 @@ const Navbar = ({dishName,search,setDishName}) => {
               null                   
                 :
                 <a href="/Setting"><div className="icons"><FaBars/></div></a>
-            }
-
-                
+            }              
             </div>
-
-
       </nav>
-
     </div>
     )
 }
-
 export default Navbar;
